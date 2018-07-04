@@ -398,11 +398,6 @@
 
 
 $(document).ready(function(){
-    //如果openid不存在，直接跳转授权
-    if(!Common.getParameterByName('openid')){
-        location.href = 'http://wx-valrhona.e0x233.com/api/wechat/oauth/auth/58db4ee1-98ad-4c50-b140-aecd49ca71a8';
-        return;
-    }
     var mycontroller = new controller();
     mycontroller.init();
 });

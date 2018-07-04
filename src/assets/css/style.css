@@ -933,3 +933,7 @@ body {
 #pin-form-enterprise .v-content {
   top: calc(50% - 0.5rem);
 }
+
+body {
+  background: green;
+}

@@ -21,145 +21,98 @@
 <!--main content-->
 <!-- 已关注 -->
 <div class="wrapper animate">
-    <!-- landing page -->
-    <div class="pin" id="pin-landing">
-        <div class="v-content">
-            <div class="logo">
-                <img src="src/dist/images/logo.png" alt=""/>
-            </div>
-            <h2 class="title">请选择您的身份</h2>
-            <div class="btn btn-enterprise" type="business">企业人员</div>
-            <div class="btn btn-person" type="person">烘培爱好者</div>
+    <div class="menu">
+        <nav class="menu-women">
+            <ul class="lists">
+                <li class="item">1</li>
+                <li class="item">2</li>
+                <li class="item">3</li>
+            </ul>
+        </nav>
+        <nav class="menu-men">
+            <ul class="lists">
+                <li class="item">1</li>
+                <li class="item">2</li>
+                <li class="item">3</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="search-box">
+        <div class="icon-search">icon</div>
+        <div class="search-input">
+            <input type="text"/>
         </div>
     </div>
-    <!--企业人员-->
-    <div class="pin" id="pin-form-enterprise">
-        <div class="v-content">
-            <div class="logo">
-                <img src="src/dist/images/logo.png" alt=""/>
-            </div>
-            <div class="beauty">
-                <img src="src/dist/images/beauty.png" alt=""/>
-            </div>
-            <form id="form-register-enterprise" class="form-register">
-                <div class="input-box-wrap">
-                    <div class="input-box input-box-lastname">
-                        <input type="text" class="input-lastname" placeholder="姓"/>
-                    </div>
-                    <div class="input-box input-box-firstname">
-                        <input type="text" class="input-firstname" placeholder="名"/>
-                    </div>
-                </div>
-                <div class="input-box input-box-mobile">
-                    <input type="tel" maxlength="11" class="input-mobile" placeholder="手机号码"/>
-                    <span class="btn-getcode">
-                        获取验证码
-                    </span>
-                </div>
-                <div class="input-box input-box-validate-code">
-                    <input type="text" class="input-validate-code" placeholder="验证码"/>
-                </div>
-                <!--您的单位-->
-                <div class="input-box select-box select-box-company">
-                    <input type="text" class="input-select input-your-company" placeholder="请选择您的单位" />
-                    <select name="yourcompany" class="select-your-company">
-                        <option value="">请选择您的单位</option>
-                        <option value="酒店">酒店</option>
-                        <option value="饼房">饼房</option>
-                        <option value="甜品店">甜品店</option>
-                        <option value="网上烘焙店">网上烘焙店</option>
-                        <option value="请填写">其他请填写</option>
-                    </select>
-                </div>
-                <div class="input-box-wrap">
-                    <div class="input-box select-box">
-                        <input type="text" class="input-select input-your-title" placeholder="您的职业" />
-                        <select name="yourtitle" class="select-your-title">
-                            <option value="">请选择您的职位</option>
-                            <option value="行政总厨">行政总厨</option>
-                            <option value="西点厨师">西点厨师</option>
-                            <option value="采购">采购</option>
-                            <option value="研发">研发</option>
-                            <option value="自营老板">自营老板</option>
-                            <option value="请填写">其他请填写</option>
-                        </select>
-                    </div>
-                    <div class="input-box select-box select-box-consumption">
-                        <input type="text" class="input-select input-chocolate-consumption" placeholder="您的巧克力用量" />
-                        <select name="chocolate-consumption" class="select-chocolate-consumption">
-                            <option value="">请选择您的巧克力用量</option>
-                            <option value="小于500克/月">小于500克/月</option>
-                            <option value="500克/月-1公斤/月">500克/月-1公斤/月</option>
-                            <option value="1公斤/月-3公斤/月">1公斤/月-3公斤/月</option>
-                            <option value="3公斤/月-24公斤/月">3公斤/月-24公斤/月</option>
-                            <option value="请填写">24公斤/月以上请填写</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="input-submit" type="business">立即提交</div>
+    <div class="category-menu">
+        <span class="item">男士</span>
+        <span class="item">女士</span>
     </div>
-    <!-- 烘培爱好者 -->
-    <div class="pin pin-1 pin-form" id="pin-form-roaster">
-        <div class="v-content">
-            <div class="logo">
-                <img src="src/dist/images/logo.png" alt=""/>
-            </div>
-            <div class="beauty">
-                <img src="src/dist/images/beauty.png" alt=""/>
-            </div>
-            <form id="form-register-roaster" class="form-register">
-                <div class="input-box-wrap">
-                    <div class="input-box input-box-lastname">
-                        <input type="text" class="input-lastname" placeholder="姓"/>
-                    </div>
-                    <div class="input-box input-box-firstname">
-                        <input type="text" class="input-firstname" placeholder="名"/>
-                    </div>
-                </div>
-                <div class="input-box input-box-mobile">
-                    <input type="tel" maxlength="11" class="input-mobile" placeholder="手机号码"/>
-                    <span class="btn-getcode">
-                        获取验证码
-                    </span>
-                </div>
-                <div class="input-box input-box-validate-code">
-                    <input type="text" class="input-validate-code" placeholder="验证码"/>
-                </div>
-                <div class="input-box select-box">
-                    <input type="text" class="input-select input-chocolate-consumption" placeholder="您的巧克力用量" />
-                    <select name="chocolate-consumption" class="select-chocolate-consumption">
-                        <option value="">请选择您的巧克力用量</option>
-                        <option value="小于500克/月">小于500克/月</option>
-                        <option value="500克/月-1公斤/月">500克/月-1公斤/月</option>
-                        <option value="1公斤/月-2公斤/月">1公斤/月-2公斤/月</option>
-                        <option value="请填写">2公斤/月以上请填写</option>
-                    </select>
-                </div>
-            </form>
+    <div class="container">
+        <div class="main-look">
+            <img src="" alt=""/>
         </div>
-        <div class="input-submit" type="person">立即提交</div>
-    </div>
-    <!-- 注册成功-->
-    <div class="pin pin-2" id="pin-success">
-        <div class="v-content">
-            <div class="beauty">
-                <img src="src/dist/images/beauty.png" alt=""/>
+        <!-- swiper -->
+        <div class="look-lists">
+            <ul>
+                <li class="item">
+                    <div class="look-img">
+                        <img src="" alt=""/>
+                    </div>
+                    <div class="product-tags">
+                        <ul>
+                            <li class="item">
+                                <h4 class="product-name">product name</h4>
+                                <div class="product-link">
+                                    <a href="www.baidu.com">购买</a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <h4 class="product-name">product name</h4>
+                                <div class="product-link">
+                                    <a href="www.baidu.com">购买</a>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <h4 class="product-name">product name</h4>
+                                <div class="product-link">
+                                    <a href="www.baidu.com">购买</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- product details-->
+        <div class="product-details">
+            <div class="top-box">
+                <div class="product-img">
+                    <img src="" alt=""/>
+                </div>
+                <div class="product-name">product name</div>
+                <div class="product-price">product price</div>
+                <div class="product-des">product des</div>
+                <div class="product-number">product number</div>
+                <div class="product-below">
+                    细节
+                </div>
             </div>
-            <div class="success-text">
-                <img src="src/dist/images/success-text.png" alt=""/>
-            </div>
-            <div class="des">
-                源自1922年的法国巧克力品牌Valrhona<br>
-                以匠心工艺、优越品质、专业团队<br>
-                为您提供美妙的味蕾享受和体验。<br>
-                敬请期待更多会员专属福利，获取即时品牌资讯！
-            </div>
-            <div class="congratulations">
-                <img src="src/dist/images/Congratulations.png" alt=""/>
+            <div class="bottom-box">
+                <p>
+                    kdkkdkd<br>
+                    kdkkdkd<br>
+                    kdkkdkd<br>
+                    kdkkdkd<br>
+                </p>
+                <div class="buttons">
+                    <div class="btn btn-closeproduct">返回</div>
+                    <div class="btn btn-buylink">
+                        <a href="http://wwww.baidu.com">购买</a>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 </body>
