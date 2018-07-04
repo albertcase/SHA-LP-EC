@@ -614,5 +614,5 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     var mycontroller = new controller();
-    mycontroller.init();
+    //mycontroller.init();
 });
