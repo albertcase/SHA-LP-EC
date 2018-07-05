@@ -14,11 +14,9 @@
         var self = this;
         //显示
         $('.wrapper').addClass('fade');
-        //获取用户图像
-        self.getUserImage();
         self.bindEvent();
         //使用路由
-        Common.hashRoute();
+        //Common.hashRoute();
     };
 
     //获取用户图像
@@ -37,101 +35,21 @@
         var self = this;
 
         //添加hashchange,当hash变更的时候
-        window.addEventListener("hashchange", function(){
-            var hasTag = location.hash;
-            var hashArr = hasTag.split('=');
-            Common.gotoPin(hashArr[1]);
-        }, false);
+        //window.addEventListener("hashchange", function(){
+        //    var hasTag = location.hash;
+        //    var hashArr = hasTag.split('=');
+        //    Common.gotoPin(hashArr[1]);
+        //}, false);
 
 
-    //    选择当前用户角色
-        $('#pin-landing .btn').on('click', function(){
-            if($(this).attr('type') == "business"){
-                //企业用户
-                Common.gotoPin(1);
-            }else{
-                //烘培爱好者
-                Common.gotoPin(2);
-            }
-        });
-
-    //    当触碰input-box，error消失
-        $('input').on('touchstart', function(){
-            Common.errorMsg.remove($(this).parent());
-        });
-        $('select').on('touchstart', function(){
-            Common.errorMsg.remove($(this).parent());
-        });
-        $('.input-box').on('touchstart', '.error', function(){
-            Common.errorMsg.remove($(this).parent());
+    //    点击展示列表页面
+        $('.main-look').on('touchstart', function(){
+            $('.main-look').remove();
+            $('.look-lists').addClass('show');
         });
 
 
-    //    获取短信验证码
-        var enabled = true;
-        var btnGetCode = $('.btn-getcode');
-        btnGetCode.on('touchstart', function(e){
-            var element = $(this);
-            if(self.validateMobile(e)){
-            //    验证通过，调用发短信接口
-            //    移除错误提示
-                element.parent().find('.input-mobile').removeClass('error-box').siblings('.error').remove();
-                if(!enabled) return;
-                enabled = false;
-                //console.log('验证通过，调用发短信接口');
-                Common.msgBox.add('短信发送中...');
-                $.ajax({
-                    url:self.baseUrl + '/api/valrhona/register/code',
-                    type:'POST',
-                    dataType:'json',
-                    data:{
-                        openid: self.openid,
-                        phone: $(this).parent().find('.input-mobile').val()
-                    },
-                    success:function(){
-                        Common.msgBox.remove();
-                        var count = 60;
-                        element.addClass('disabled');
-                        var countDown = setInterval(function(){
-                            element.html(count+'s后可重发');
-                            if(count == 0){
-                                enabled = true;
-                                element.removeClass('disabled').html('获取验证码');
-                                clearInterval(countDown);
-                            }
-                            count--;
-                        },1000);
-                    }
-                });
-            }
-        });
 
-    //    选择单位
-    //    以第一个值为默认值
-    //    $('.input-your-company').val($('.select-your-company').val());
-        $('.select-box select').on('change', function(){
-            var curVal = $(this).val();
-            if(curVal=="其他" || curVal=="请填写"){
-                $(this).parent().addClass('changetoinput');
-                //$(this).siblings('.input-select').val('');
-            }else{
-                $(this).parent().removeClass('changetoinput');
-            }
-            $(this).siblings('.input-select').val(curVal);
-        });
-
-    //    提交表单
-        $('.input-submit').on('touchstart', function(e){
-            e.preventDefault();
-            if($(this).attr('type') == "business"){
-            //    企业用户
-                self.submitFormEnterprise();
-            }else{
-            //    烘培爱好者
-                self.submitFormRoaster();
-            }
-
-        });
 
     };
 
@@ -399,5 +317,5 @@
 
 $(document).ready(function(){
     var mycontroller = new controller();
-    //mycontroller.init();
+    mycontroller.init();
 });

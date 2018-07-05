@@ -35,7 +35,7 @@ var path = {
     homeJs:[
         './src/assets/js/lib/zepto.min.js',
         //'./src/assets/js/lib/pre-loader.js',
-        //'./src/assets/js/lib/reqAnimate.js',
+        './src/assets/js/lib/swiper.min.js',
         './src/assets/js/rem.js',
         //'./src/assets/js/region.js',
         './src/assets/js/common.js',
