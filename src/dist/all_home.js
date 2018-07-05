@@ -30,9 +30,9 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 					docEl.style.fontSize = 50 * (width / 414) + 'px';
 				}
       };
-    recalc();
+    //recalc();
     if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
+    //win.addEventListener(resizeEvt, recalc, false);
 })(document, window);
 ;(function(){
 	var ua = navigator.userAgent.toLowerCase();

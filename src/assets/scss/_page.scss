@@ -1,3 +1,7 @@
+/*
+  Evelyn create at 20180702
+  Notice: There are there layers
+*/
 @mixin fullabsolute($left,$top,$w,$h,$zindex){
   position: absolute;
   left: $left;
@@ -11,10 +15,20 @@ html,body{
   width: 100%;
   height: 100%;
 }
-body{
-  background: url("../images/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+@media (aspect-ratio: 375/603) {
+  html{ font-size: calc(100vw / 375 * 50); }
 }
+
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 375/603) {
+  html{ font-size: calc(100vh / 603 * 50); }
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 375/603) {
+  html{ font-size: calc(100vw / 375 * 50); }
+}
+
 .wrapper{
   height: 100%;
   @include fullabsolute(0,0,100%,100%,1);
@@ -23,12 +37,6 @@ body{
 .logo{
   @include size(2.8rem,1.18rem);
   margin: 0 auto 0.4rem;
-}
-.beauty{
-  @include size(1.59rem,1.59rem);
-  border-radius: 100%;
-  overflow: hidden;
-  margin: 0.2rem auto 0.6rem;
 }
 
 .pin{
@@ -81,9 +89,6 @@ body{
 .bg{
   overflow: hidden;
 }
-.container{
-  background: rgba(232,232,232,0.6);
-}
 
 *::-webkit-input-placeholder {
   color: #BDAD9E;
@@ -99,7 +104,66 @@ body{
 }
 
 
+//422 x 748 px -- img need cover the page, so if ratio >
+.responsive-img{
+  width: 100% !important;
+  height: auto !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+}
+/* Minimum aspect ratio */
+@media (max-aspect-ratio: 422/748) {
+  .responsive-img{
+    width: auto !important;;
+    height: 100% !important;;
+  }
+}
+.hide_overflow{
+  overflow: hidden;
+}
+
+
+//middle-layer
+.container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.main-look{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
 // For menu
+.icon-menu{
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  z-index: 10;
+  .small-line{
+    @include size(0.3rem,0.06rem);
+    display: block;
+    margin-bottom: 0.04rem;
+    background: #000;
+  }
+}
+.icon-search{
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 0.34rem;
+  z-index: 10;
+}
 .menu-box{
   position: absolute;
   top: 0.25rem;
@@ -115,7 +179,20 @@ body{
 .category-menu{
   position: absolute;
   bottom: 0.25rem;
-  left: 0.25rem;
+  left: 0.2rem;
+  z-index: 10;
+  font-size: 0.28rem;
+  writing-mode: vertical-rl;
+  .item{
+    display: inline-block;
+    color: #5b5b5b;
+    &.active{
+      color: #b76e4d;
+    }
+  }
+  .item-men{
+    margin-bottom: 0.1rem;
+  }
 }
 
 // hide
